@@ -94,13 +94,13 @@ exports.default = {
                     user_id,
                     game_id: games[i].id,
                 });
-                if (!ug || games[i].belt_id != "fe412b49-5aca-4147-84a5-3adf99dfe7d7") {
+                if (!ug || games[i].belt_id != "b4518c96-4d45-4192-810d-3fd8d16b7c0c") {
                     games[i]["status"] = false;
                 }
                 else {
                     games[i]["status"] = true;
                 }
-                if (games[i].belt_id == "fe412b49-5aca-4147-84a5-3adf99dfe7d7" &&
+                if (games[i].belt_id == "b4518c96-4d45-4192-810d-3fd8d16b7c0c" &&
                     games[i].stage == "01-01") {
                     games[i]["status"] = true;
                 }
@@ -219,7 +219,7 @@ exports.default = {
                     status: true,
                 });
                 yield update.save();
-                let belt_id = "fe412b49-5aca-4147-84a5-3adf99dfe7d7";
+                let belt_id = "b4518c96-4d45-4192-810d-3fd8d16b7c0c";
                 const current = yield Game_1.default.findOneBy({
                     id: ug === null || ug === void 0 ? void 0 : ug.game_id,
                     belt_id,

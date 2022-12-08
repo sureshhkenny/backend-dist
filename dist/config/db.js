@@ -24,11 +24,11 @@ exports.default = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield (0, typeorm_1.createConnection)({
             type: "postgres",
-            host: "screenit.cpgmuun9semi.ap-south-1.rds.amazonaws.com",
-            port: 5000,
+            host: "schoolcode.chbbwydjh9iv.eu-west-2.rds.amazonaws.com",
+            port: 5432,
             username: "postgres",
-            password: "ScreenitawsDB2020",
-            database: "scratch_test",
+            password: "schoolcodeuser",
+            database: "schoolcode",
             entities: [user_1.User, Course_1.default, Asset_1.default, Game_1.default, UProject_1.default, AssetUpload_1.AssetUpload, Belt_1.default],
             synchronize: true,
         });

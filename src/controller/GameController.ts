@@ -79,13 +79,15 @@ export default {
           game_id: games[i].id,
         });
 
-        if (!ug || games[i].belt_id != "fe412b49-5aca-4147-84a5-3adf99dfe7d7") {
+        // if (!ug || games[i].belt_id != "fe412b49-5aca-4147-84a5-3adf99dfe7d7") {
+        if (!ug || games[i].belt_id != "b4518c96-4d45-4192-810d-3fd8d16b7c0c") {
           games[i]["status"] = false;
         } else {
           games[i]["status"] = true;
         }
         if (
-          games[i].belt_id == "fe412b49-5aca-4147-84a5-3adf99dfe7d7" &&
+          // games[i].belt_id == "fe412b49-5aca-4147-84a5-3adf99dfe7d7" &&
+          games[i].belt_id == "b4518c96-4d45-4192-810d-3fd8d16b7c0c" &&
           games[i].stage == "01-01"
         ) {
           games[i]["status"] = true;
@@ -199,7 +201,8 @@ export default {
         });
         await update.save();
 
-        let belt_id = "fe412b49-5aca-4147-84a5-3adf99dfe7d7";
+        // let belt_id = "fe412b49-5aca-4147-84a5-3adf99dfe7d7";
+        let belt_id = "b4518c96-4d45-4192-810d-3fd8d16b7c0c";
 
         const current = await Game.findOneBy({
           id: ug?.game_id,
