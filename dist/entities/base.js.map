@@ -1,0 +1,1 @@
+{"version":3,"file":"base.js","sourceRoot":"","sources":["../../src/entities/base.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qCAMiB;AAGjB,IAAa,IAAI,GAAjB,MAAa,IAAK,SAAQ,oBAAU;CASnC,CAAA;AAPC;IADC,IAAA,gCAAsB,EAAC,MAAM,CAAC;;gCACnB;AAGZ;IADC,IAAA,0BAAgB,GAAE;8BACN,IAAI;wCAAC;AAGlB;IADC,IAAA,0BAAgB,GAAE;8BACN,IAAI;wCAAC;AARP,IAAI;IADhB,IAAA,gBAAM,GAAE;GACI,IAAI,CAShB;AATY,oBAAI"}

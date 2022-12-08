@@ -1,0 +1,30 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const GameController_1 = __importDefault(require("../controller/GameController"));
+const ErrorHandling_1 = require("../middleware/ErrorHandling");
+const Admin = (0, express_1.Router)();
+const multer_1 = __importDefault(require("multer"));
+const adminToken_1 = require("../middleware/adminToken");
+const storage = multer_1.default.memoryStorage();
+const upload = (0, multer_1.default)({ storage });
+Admin.use(adminToken_1.auth);
+Admin.post("/course", (0, ErrorHandling_1.Use)(GameController_1.default.coursePost));
+Admin.get("/course", (0, ErrorHandling_1.Use)(GameController_1.default.courseGet));
+Admin.post("/belt", (0, ErrorHandling_1.Use)(GameController_1.default.beltAdd));
+Admin.get("/belt", (0, ErrorHandling_1.Use)(GameController_1.default.beltGet));
+Admin.post("/game/:course_id", (0, ErrorHandling_1.Use)(GameController_1.default.gamePost));
+Admin.put("/game/:game_id", (0, ErrorHandling_1.Use)(GameController_1.default.gameUpdate));
+Admin.get("/game/:course_id", (0, ErrorHandling_1.Use)(GameController_1.default.adminGame));
+Admin.get("/game/:game_id/load", (0, ErrorHandling_1.Use)(GameController_1.default.gameSingleJson));
+Admin.get("/game/:game_id/data", (0, ErrorHandling_1.Use)(GameController_1.default.gameSingle));
+Admin.post("/asset", upload.single("file"), (0, ErrorHandling_1.Use)(GameController_1.default.assetPost));
+Admin.post("/assets", upload.array("files", 10), (0, ErrorHandling_1.Use)(GameController_1.default.assetsPost));
+Admin.get("/asset", (0, ErrorHandling_1.Use)(GameController_1.default.assetRead));
+Admin.get("/asset/:asset_id", (0, ErrorHandling_1.Use)(GameController_1.default.assetGet));
+Admin.post("/asset/upload", (0, ErrorHandling_1.Use)(GameController_1.default.addAsset));
+exports.default = Admin;
+//# sourceMappingURL=AdminRoute.js.map
